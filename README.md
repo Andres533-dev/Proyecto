@@ -33,6 +33,6 @@ Quick mockup to get the fundamentals of the modules and how the user/administrat
 ## CRC CARDS
 A diagram of which are the most important class and how they interact
 ## REFERENCES
-Our source information was for the app's design was:
+Our source information for the app's design are:
 1. [Diseño de interfaz de aplicaciones: principios y recomendaciones](https://www.justinmind.com/es/ui-diseno/layout-sitio-web-aplicaciones-moviles)
 2. [Diseño optimizado para sitios web y aplicaciones móviles modernos](https://www.byronvargas.com/web/como-debe-ser-la-interfaz-de-una-app/)
