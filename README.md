@@ -36,3 +36,5 @@ A diagram of which are the most important class and how they interact
 Our source information for the app's design are:
 1. [Diseño de interfaz de aplicaciones: principios y recomendaciones](https://www.justinmind.com/es/ui-diseno/layout-sitio-web-aplicaciones-moviles)
 2. [Diseño optimizado para sitios web y aplicaciones móviles modernos](https://www.byronvargas.com/web/como-debe-ser-la-interfaz-de-una-app/)
+3. [Diagrama de clases](https://diagramasuml.com/diagrama-de-clases/)
+4. [Diagramas UML](https://creately.com/blog/diagrams/uml-diagram-types-examples/)
