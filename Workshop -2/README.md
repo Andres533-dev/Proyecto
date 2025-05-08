@@ -26,5 +26,7 @@ Recent refinements include:
 1. **Payment System Redesign**: Replaced generic payment handling with dedicated credit card management
 2. **Behavior Specialization**: Enhanced trip request handling with role-specific implementations
 3. **Access Control**: Strengthened data protection through careful encapsulation
-
+## REFERENCES
+1. [Diagrama de clases](https://diagramasuml.com/diagrama-de-clases/)
+2. [Diagramas UML](https://creately.com/blog/diagrams/uml-diagram-types-examples/)
 The design emphasizes clarity, flexibility, and security while meeting all functional requirements.
