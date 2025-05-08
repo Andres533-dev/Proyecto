@@ -25,4 +25,35 @@ public class CreditCard {
 			return false;
 		}
 	}
+	
+	
+/*
+ * Group of setter methods, getters are a no need since Credit card information 
+ * is quite risky to manipulate, ccv will be elaborated to the future 
+ */
+	
+	
+	/* @param1 User user to verify roles
+	 * @param2 New CC number 
+	 */
+	public String setCardNumber(User user, String newCardNumber/*input for the new CCnumber*/) {
+		
+		if(user.hasRole("Owner")) //Verifies ownership
+			
+			return this.cardNumber=newCardNumber; // Switches values
+		else
+			
+		return "Can't modify information"; //Denied access
+	}
+	
+	public String setExpDate(User user, String newExpDate/*input for the new CCnumber*/) {
+		
+		if(user.hasRole("Owner")) //Verifies ownership
+			
+			return this.expDate=newExpDate; // Switches values
+		else
+			
+		return "Can't modify information"; //Denied access
+	}
+	
 }

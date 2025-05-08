@@ -27,7 +27,7 @@ public class Driver extends User {
 	
 	
 	
-	public void getname(User user) {
+	public void getName(User user) {
 		if(user.hasRole("Passenger")) {
 			System.out.println("Name: " + this.name);
 		}
