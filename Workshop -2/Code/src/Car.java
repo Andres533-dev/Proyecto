@@ -1,3 +1,4 @@
+package Proyecto.Code.src;
 /* 
 This file is the creation of the mother class car
 
@@ -22,24 +23,29 @@ public class Car {
     * @param car election: boolean to use.
     */
     public String getColor(boolean carElection) {
-        if(carElection)
-        return color;
+        if(carElection){
+            return color;
+        }
+        return "No car selected";
+
     }
     public String getModel(boolean carElection) {
-        if(carElection)
+        if(carElection){
         return model;
+        }
+        return "No car selected"; //In case that the user dont choose a car
     }
     public String getLicensePlate(boolean carElection) {
-        if(carElection)
+        if(carElection){
         return licensePlate;
+        }
+        return "No car selected";
     }
     public int getCapacity(boolean carElection) {
-        if(carElection)
+        if(carElection){
         return capacity;
-    }
-    public String getCapacitie(boolean carElection) {
-        if(carElection)
-        return capacity;
+        }
+        return 0;//In case that the user dont choose a car
     }
     /**
      Creating a setter that allows to change the variable if the input are avalible and if the carge of the person is correctly

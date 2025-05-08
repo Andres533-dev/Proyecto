@@ -1,3 +1,4 @@
+package Proyecto.Code.src;
 
 /* 
 This file is the creation of the class Rating
@@ -11,7 +12,7 @@ public class Rating {
     Creation of the constructor and realize the variable inicialitation.
     */
     public Rating(){
-        userCalification=0;
+        calification=0;
         commentary=" ";
     }
      /**
@@ -20,7 +21,7 @@ public class Rating {
      * @param newCalification: calification to analize.
      */
     public void makeCalification(int newCalification){
-        if(0<=newCalification<=5 )
+        if(0<=newCalification || newCalification<=5 )
         calification=newCalification;
         
     }
@@ -31,7 +32,7 @@ public class Rating {
      */
     public void makeCommentary(String newCommentary){
         int sizeCommentary=newCommentary.length();
-        if(0<sizeCommentary<=150)
+        if(0<sizeCommentary || sizeCommentary<=150)
         commentary=newCommentary;
         else
         System.out.println("The commentary's size isnt correct, please try again ");

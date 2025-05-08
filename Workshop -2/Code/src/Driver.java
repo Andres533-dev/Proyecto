@@ -1,3 +1,4 @@
+package Proyecto.Code.src;
 
 
 /*Subclass from User since they both require credentials to login (mail and password) &
