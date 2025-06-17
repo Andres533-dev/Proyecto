@@ -1,4 +1,4 @@
-#Workshop-3
+# Workshop-3
 ** Implementation of the correction from the workshop-1 and workshop-2 and adding the conceptual and practic implementation of the SOLID **
 ##Objectives:
 **We update the objetives, making there more especific: **
@@ -13,15 +13,15 @@
 -Enhance user experience via smartphones.
 
 -Evaluate the solution’s impact on travel time and mobility options.
-##User stories:
+## User stories:
 **We add a estimated time for the user storie based on the his priority:**
 -High: 2 weeks
 -Medium:1 week
-##Mockup:
+## Mockup:
 **Change the interfaz from a cell phone to a computer**
-##UML diagrams:
+## UML diagrams:
 **Modificate the Uml diagram to implementation of the SOLID principles**
-##SOLID:
+## SOLID:
 **Apply some of this principles:**
 -Single responsability
 -Open/closed
