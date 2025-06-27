@@ -1,5 +1,6 @@
-package Proyecto.Code.src;
+package Proyecto.Code.src.Controler;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 //Quick library summary
@@ -10,10 +11,10 @@ any other set of distinct items where the order doesn't matter.*/
 
 public class User {
 
-	public String name;
+	protected String name;
 	protected String password;
 	protected String mail;
-	protected String number;
+	protected String lastName;
 	private Set<String> roles;	
 	/*
 	 * Roles mentioned throughout the code 
@@ -23,13 +24,13 @@ public class User {
 	 */
 	
 	
-	public User(){
+	public User(String name,String lastName ,String password, String mail) {
 		
 		
 		this.name = name;
 		this.password = password;
 		this.mail = mail;
-		this.number = number;
+		this.lastName = lastName;
 		this.roles = new HashSet<>();
 	}
 	
@@ -70,23 +71,27 @@ public class User {
 		return this.mail;
 		
 		//Sends an error message
-		return "You are not eligible to access this information";
+		else{
+			return "You are not eligible to access this information";
+		}
+
 	}
 	
-	public String getNumber(User user) {
+	public String getLastName(User user) {
 		
-		if(user.hasRole("Admin") || user.hasRole("Driver") || user.hasRole("Owner")) 
-		return this.number;
+		if(user.hasRole("Admin") || user.hasRole("Driver") || user.hasRole("Owner")){
+			return this.lastName;
+		}
 		
 		//Sends an error message
-		return "You are not eligible to access this information";
+			return "You are not eligible to access this information";
 	}
 	
 	public String getPassword(User user) {
 		
-		if(user.hasRole("Admin") || user.hasRole("Owner")) 
-		return this.password;
-		
+		if(user.hasRole("Admin") || user.hasRole("Owner")) {
+			return this.password;
+		}
 		//Sends an error message
 		return "You are not eligible to access this information";
 	}
@@ -105,8 +110,10 @@ public class User {
 	
 	public String setName(User user, String newName) {
 		if(user.hasRole("Admin") || user.hasRole("Owner")) {
-			if(newName!=this.name)
-			return this.name=newName;
+			if(!Objects.equals(newName, this.name)){
+				return this.name=newName;
+			}
+
 			
 			return "The new input is the same as the old one";
 		}
@@ -117,8 +124,9 @@ public class User {
 	
 	public String setMail(User user, String newMail) {
 		if(user.hasRole("Admin") || user.hasRole("Owner")) {
-			if(newMail!=this.mail)
-			return this.mail=newMail;
+			if(!Objects.equals(newMail, this.mail)){
+				return this.mail=newMail;
+			}
 			
 			return "You are using the same email right now";
 		}
@@ -129,9 +137,9 @@ public class User {
 	
 	public String setPassword(User user, String newPassword) {
 		if(user.hasRole("Admin") || user.hasRole("Owner")) {
-			if(newPassword!=this.password)
+			if(!Objects.equals(newPassword, this.password)){
 			return this.password=newPassword;
-			
+			}
 			return "You have already used this password";
 		}
 		
@@ -139,12 +147,13 @@ public class User {
 		
 	}
 	
-	public String setNumber(User user, String newNumber) {
+	public String setNumber(User user, String newLastName) {
 		if(user.hasRole("Admin") || user.hasRole("Owner")) {
-			if(newNumber!=this.number)
-			return this.number=newNumber;
-			
+			if(!Objects.equals(newLastName, this.lastName))
+			return this.lastName=newLastName;
+			else{
 			return "This is already your current phone number";
+			}
 		}
 		
 		return "You can't modify this information";

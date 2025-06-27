@@ -1,16 +1,14 @@
-package View;
-/*
- * This file contains the frontend to the card data request for 
- * online payment
- */
+package Proyecto.Code.src.View;
+import Proyecto.Code.src.Controler.*;
+import Proyecto.Code.src.CreditCard;
+
 import javax.swing.*;
 
-import java.awt.Dimension;
-import java.awt.Font;
+import java.awt.*;
 import java.util.List;
 import java.util.ArrayList;
 
-public class FormGui extends JFrame {
+public class Form  {
 
 	private JButton  button;
 	private List<JTextField> fields;
@@ -18,21 +16,19 @@ public class FormGui extends JFrame {
 	private List<JLabel> labels;
 	private JPanel pane;
 	
-	public FormGui(String[] labelTexts){
+	public Form(String[] labelTexts){
     pane = new JPanel();
     layout = new SpringLayout();
     button = new JButton("Submit");
     setupLabels(labelTexts);
     setupTextFields();
-    //layoutPanel();
     setupLayout();
-    setupPanel();
+    setupPane();
 	setUpFrame();
 	}
 	
 	/*
-	 * This method generates a Label required for the ammount of data (4)
-	 * that is required to verify the ownership and the payment
+	 * This method generates a Label required for the amount of data
 	 */
 	private void setupLabels(String[] labelTexts) {
 		labels = new ArrayList<>(); // Starts the label's array
@@ -56,7 +52,7 @@ public class FormGui extends JFrame {
 			}
 	}	
 	/*
-	 * This method works similar as a starter for the Panel to avoid 
+	 * This method works similar to a starter for the Panel to avoid
 	 * any mess within the constructor logic.
 	 */
 	private void setupLayout() {
@@ -80,11 +76,11 @@ public class FormGui extends JFrame {
 			layout.putConstraint(SpringLayout.NORTH, currentTextField, 35, SpringLayout.NORTH, currentLabel);
 		}
 		
-		//Button ubication based on the last field center and south end.
+		//Button location based on the last field center and south end.
 		layout.putConstraint(SpringLayout.HORIZONTAL_CENTER, button, 0, SpringLayout.HORIZONTAL_CENTER, fields.get(i-1));
 		layout.putConstraint(SpringLayout.NORTH, button, 50, SpringLayout.SOUTH, fields.get(i-1));
 	}
-	private void setupPanel() {
+	private void setupPane() {
 		pane.setLayout(layout);
 		pane.add(button);
 		//Cycle to add both labels and fields
@@ -99,21 +95,53 @@ public class FormGui extends JFrame {
 	 * This method establishes the dimensions and padding between each label
 	 * and its corresponding textfield within the main panel, avoid modifying the values.
 	 */
-	
-	
-    /* 
-	private void layoutPanel(){
-		layout.putConstraint(SpringLayout.HORIZONTAL_CENTER, pane, 0, SpringLayout.HORIZONTAL_CENTER, this);
-		layout.putConstraint(SpringLayout.VERTICAL_CENTER, pane, 0, SpringLayout.VERTICAL_CENTER, this);
-		
-	}
-	*/	
 	public void setUpFrame(){
-		this.setSize(500,500);
-		this.setContentPane(pane);
-		this.setLocationRelativeTo(null);
-		this.setVisible(true);
+		JFrame frame=new JFrame();
+		frame.setSize(500,500);
+		frame.add(pane);
+		frame.setLocationRelativeTo(null);
+		frame.setVisible(true);
 
 	}
+	public List<String> Controller(JFrame frame){
+		button.addActionListener(e->{
+			List<String> answers = new ArrayList<>();
+			for(JTextField textField : fields) {
+				answers.add(textField.getText());
+			}
+			JLabel email=new JLabel("Email");
+			JLabel name=new JLabel("Name");
+			JLabel typeRoad=new JLabel("Type of road");
+			JLabel cardNumber=new JLabel("Card number");
+			if(labels.getFirst().equals(email)){
+				try{
+					LogIn();
+				}
+				catch (Exception ex){
+					JOptionPane.showMessageDialog(frame,"Invalid input.");
+
+				}
+			}
+			else if(labels.getFirst().equals(name)){
+				try{
+					SignUp signUp=new SignUp(answers);
+				} catch (RuntimeException ex) {
+					JOptionPane.showMessageDialog(frame,"Invalid input.");
+				}
+			}
+			else if(labels.getFirst().equals(typeRoad)){
+				try{
+					Direction();
+				}
+				catch (){
+
+				}
+			}
+			else if(labels.getFirst().equals(cardNumber)){
+				CreditCard creditCard=new CreditCard();
+			}
+		});
+	}
+
 }
 
