@@ -1,0 +1,12 @@
+Name:Darian Kove
+TypeCar:Xl
+Color:Black
+LicensePlate:NMS-234
+Name:Elara Vexis
+TypeCar:Fast
+Color:Blue
+LicensePlate:VXT-007
+Name:Ryn Torvald
+TypeCar:Normal
+Color:Silver
+LicensePlate:TRV-202
